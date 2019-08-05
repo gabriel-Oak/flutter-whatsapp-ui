@@ -31,6 +31,8 @@ class _WhatsAppHomeState extends State<WhatsAppHome>
   
   @override
   Widget build(BuildContext context) {
+    var _width = MediaQuery.of(context).size.width - 30;
+
     return Scaffold(
       appBar: new AppBar(
         title: Text('WhatsApp'),
@@ -49,12 +51,24 @@ class _WhatsAppHomeState extends State<WhatsAppHome>
           controller: _tabController,
           indicatorColor: Colors.white,
           isScrollable: true,
-          labelStyle: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+          labelStyle: TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
           tabs: [
-            Tab(icon: Icon(Icons.camera_alt)),
-            Tab(text: 'CONVERSAS'),
-            Tab(text: 'STATUS'),
-            Tab(text: 'CHAMADAS')
+            Container(
+              width: 30,
+              child: Tab(icon: Icon(Icons.camera_alt)),
+            ),
+            Container(
+              width: (_width) / 4.5,
+              child: Tab(text: 'CONVERSAS'),
+            ),
+            Container(
+              width: (_width - 85) / 4.5,
+              child: Tab(text: 'STATUS'),
+            ),
+            Container(
+              width: (_width) / 4.5,
+              child: Tab(text: 'CHAMADAS'),
+            )
           ],
         ),
       ),

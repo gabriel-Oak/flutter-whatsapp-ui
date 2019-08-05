@@ -2,20 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 
 class CameraScreen extends StatelessWidget {
-  var picture = null;
-
+  
   @override
   Widget build(BuildContext context) {
 
     _takePick();    
 
     return Center(
-      child: Text('Camera'),
+      child: Text('Camera', style: TextStyle(fontSize: 20)),
     );
   }
 
   _takePick() async {
-    picture = await ImagePicker.pickImage(
+    var picture = await ImagePicker.pickImage(
       source: ImageSource.camera,
     );
   }
